@@ -31,6 +31,6 @@ COPY . .
 
 EXPOSE 8000
 
-USER appuser
+USER 10001
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
