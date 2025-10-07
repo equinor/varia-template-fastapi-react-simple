@@ -1,10 +1,31 @@
+This is a template repository for use with the [Varia developer portal](https://varia.equinor.com).
+To use it, open [Varia](https://varia.equinor.com), press Create... and look for the template there.
+
+Running the template creates a GitHub repository with the following content:
+* A tiny backend based on Typescript, React and EDS
+* A tiny backend based on Python and FastAPI. The backend also hosts the frontend (single container)
+* A Dockerfile for the app
+* A radixconfig.yaml file for setting this up in Radix.
+
+The actual setup in Radix is currently manual. Open [Radix](https://console.radix.equinor.com/applications), hit *Create new app* and follow the instructions.
+
 ## Prerequisites
 
-This app requires [uv], the package manager for Python.
+This app requires:
+* Python 3.13 or later
+* [uv](https://docs.astral.sh/uv/), the package manager for Python.
 
 ## Getting started
 
-1. Install FastAPI
-2. Create a Python virtual environment
-3. Run pip install -r requirements.txt
-4. Run fastapi dev
+1. Create a Python virtual environment and activate it:
+
+   ```
+   $ uv venv .venv
+   $ source .venv/bin/activate
+   ```
+
+3. Run the app and follow the instructions on the screen:
+
+   ```
+   $ uv run uvicorn
+   ```
