@@ -28,6 +28,7 @@ COPY --from=builder /app/.venv /app/.venv
 ENV PATH="/app/.venv/bin:${PATH}"
 
 COPY api/ .
+COPY web/static ./static
 
 EXPOSE 8000
 
