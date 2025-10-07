@@ -10,7 +10,7 @@ RUN pip install --no-cache-dir uv && uv --version
 
 WORKDIR /app
 
-COPY pyproject.toml uv.lock ./
+COPY api/pyproject.toml api/uv.lock ./
 
 RUN uv sync --frozen --no-dev
 
@@ -27,7 +27,7 @@ WORKDIR /app
 COPY --from=builder /app/.venv /app/.venv
 ENV PATH="/app/.venv/bin:${PATH}"
 
-COPY . .
+COPY api/ .
 
 EXPOSE 8000
 
