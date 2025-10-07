@@ -1,7 +1,7 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: "fastapi-sample-3"
+  name: ${{ values.name | dump }}
 spec:
   environments:
     - name: dev
