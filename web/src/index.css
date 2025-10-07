@@ -1,0 +1,9 @@
+:root {
+  font-family: Equinor, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
