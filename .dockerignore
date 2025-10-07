@@ -1,0 +1,22 @@
+# Keep image context lean
+**/.git
+**/.gitignore
+**/.github
+**/.venv
+**/__pycache__
+**/*.pyc
+**/.mypy_cache
+**/.pytest_cache
+**/.DS_Store
+**/node_modules
+**/.env
+**/.env.*
+
+# Build outputs
+**/dist
+**/build
+**/.coverage
+
+# Keep lockfiles and deps metadata
+!uv.lock
+!pyproject.toml

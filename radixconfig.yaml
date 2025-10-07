@@ -1,0 +1,16 @@
+apiVersion: radix.equinor.com/v1
+kind: RadixApplication
+metadata:
+  name: "fastapi-sample-3"
+spec:
+  environments:
+    - name: dev
+      build:
+        from: main
+  components:
+    - name: webapp
+      src: "."
+      ports:
+        - name: http
+          port: 8000
+      publicPort: http
