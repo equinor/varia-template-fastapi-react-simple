@@ -5,7 +5,7 @@ import uvicorn
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    app.mount("/web", StaticFiles(directory="web"), name="web")
+    app.mount("/web", StaticFiles(directory="web", html=True), name="web")
     app.mount("/assets", StaticFiles(directory="web/assets"), name="assets")
     yield
 
