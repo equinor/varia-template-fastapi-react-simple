@@ -5,13 +5,13 @@ import uvicorn
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    app.mount("/web", StaticFiles(directory="web", html=True), name="web")
+    app.mount("/", StaticFiles(directory="web", html=True), name="web")
     app.mount("/assets", StaticFiles(directory="web/assets"), name="assets")
     yield
 
 app = FastAPI(lifespan=lifespan)
 
-@app.get("/")
+@app.get("/api/hello")
 async def root():
     return {"message": "Hello World"}
 
