@@ -1,7 +1,7 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: ${{ values.name | dump }}
+  name: varia-template-fastapi-react-simple
 spec:
   environments:
     - name: dev
