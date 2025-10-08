@@ -20,12 +20,21 @@ This app requires:
 1. Create a Python virtual environment and activate it:
 
    ```
+   $ cd api
    $ uv venv .venv
    $ source .venv/bin/activate
    ```
 
-3. Run the app and follow the instructions on the screen:
+2. Build the frontend and publish to the backend:
 
    ```
+   $ cd web
+   $ pnpm build --outDir ../api/web
+   ```
+
+4. Run the app and follow the instructions on the screen:
+
+   ```
+   $ cd api
    $ uv run uvicorn
    ```

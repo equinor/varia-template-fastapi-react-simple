@@ -1,10 +1,15 @@
+from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 import uvicorn
 
-app = FastAPI()
-app.mount("/static", StaticFiles(directory="static"), name="static")
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    app.mount("/web", StaticFiles(directory="web"), name="web")
+    app.mount("/assets", StaticFiles(directory="web/assets"), name="assets")
+    yield
 
+app = FastAPI(lifespan=lifespan)
 
 @app.get("/")
 async def root():
