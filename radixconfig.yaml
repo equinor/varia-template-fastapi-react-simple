@@ -3,6 +3,8 @@ kind: RadixApplication
 metadata:
   name: varia-template-fastapi-react-simple
 spec:
+  build:
+    useBuildKit: true
   environments:
     - name: dev
       build:
