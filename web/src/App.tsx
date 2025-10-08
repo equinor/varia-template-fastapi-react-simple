@@ -14,6 +14,10 @@ const Container = styled.main`
   max-width: 1024px;
 `;
 
+fetch("/api/hello")
+  .then((response) => response.json())
+  .then((data) => console.log(data));
+
 function App() {
   return (
     <Wrapper>
