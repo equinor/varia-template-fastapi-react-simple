@@ -9,32 +9,9 @@ Running the template creates a GitHub repository with the following content:
 
 The actual setup in Radix is currently manual. Open [Radix](https://console.radix.equinor.com/applications), hit *Create new app* and follow the instructions.
 
-## Prerequisites
+## How to run locally
 
-This app requires:
-* Python 3.13 or later
-* [uv](https://docs.astral.sh/uv/), the package manager for Python.
-
-## Getting started
-
-1. Create a Python virtual environment and activate it:
-
-   ```
-   $ cd api
-   $ uv venv .venv
-   $ source .venv/bin/activate
-   ```
-
-2. Build the frontend and publish to the backend:
-
-   ```
-   $ cd web
-   $ pnpm build --outDir ../api/web
-   ```
-
-4. Run the app and follow the instructions on the screen:
-
-   ```
-   $ cd api
-   $ uv run uvicorn
-   ```
+```
+$ docker build -t hello .
+$ docker run -p 8000:8000 hello
+```
