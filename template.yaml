@@ -12,6 +12,7 @@ metadata:
     - vite
     - react
     - eds
+    - experimental
   links:
     - url: https://github.com/equinor/varia-template-fastapi-react-simple
       title: About
