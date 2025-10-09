@@ -12,6 +12,10 @@ metadata:
     - vite
     - react
     - eds
+  links:
+    - url: https://github.com/equinor/varia-template-fastapi-react-simple
+      title: About
+      icon: docs
 
 spec:
   owner: default/sw-enabling-team
