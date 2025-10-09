@@ -20,7 +20,7 @@ metadata:
 
 spec:
   owner: default/sw-enabling-team
-  type: component
+  type: website
 
   parameters:
     - title: Select a name
