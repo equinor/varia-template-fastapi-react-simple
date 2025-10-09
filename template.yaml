@@ -1,0 +1,74 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+
+metadata:
+  name: fastapi-hello-world
+  title: Simple Web App based on FastAPI, Python, React and EDS
+  description: Simple, Radix-prepared webapp with backend written in Python and FastAPI, and frontend written in React and EDS.
+  tags:
+    - python
+    - fastapi
+    - radix
+    - vite
+    - react
+    - eds
+
+spec:
+  owner: default/sw-enabling-team
+  type: component
+
+  parameters:
+    - title: Select a name
+      required:
+        - name
+      properties:
+        name:
+          title: Name
+          pattern: "^[A-Za-z0-9._-]{1,100}$"
+          type: string
+          description: This will become the repo name in GitHub and the app in Radix.
+          errorMessage:
+            pattern: "Name may only contain letters, digits, “.”, “_” or “–” (max 100 characters)."
+        repoVisibility:
+          title: Repository Type
+          type: string
+          default: internal
+          description: Who gets to view your repo.
+          enum:
+            - internal
+            - private
+          enumNames:
+            - "Internal  (Everyone at Equinor can see the repo)"
+            - "Private  (You decide who can see the repo)"
+
+  steps:
+    - id: fetch-base
+      name: Fetch Base
+      action: fetch:template
+      input:
+        url: https://github.com/equinor/varia-template-fastapi-react-simple
+        values:
+          name: ${{ parameters.name }}
+          owner: ${{ parameters.owner }}
+
+    - id: publish
+      name: Publish
+      action: publish:github
+      input:
+        description: This is ${{ parameters.name }}
+        repoUrl: github.com?repo=${{ parameters.name }}&owner=equinor
+        gitAuthorName: ${{ user.entity.metadata.name }}
+        gitAuthorEmail: ${{ user.entity.spec.profile.email }}
+        repoVisibility: ${{ parameters.repoVisibility }}
+        defaultBranch: main
+        topics: ${{ parameters.topics }}
+        collaborators:
+          - user: ${{ user.entity.metadata.name }}
+            access: admin
+          - team: ${{ parameters.owner | parseEntityRef | pick('name') }}
+            access: admin
+
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['publish'].output.remoteUrl }}
