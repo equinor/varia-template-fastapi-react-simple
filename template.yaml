@@ -4,7 +4,7 @@ kind: Template
 metadata:
   name: fastapi-hello-world
   title: Simple Web App based on FastAPI, Python, React and EDS
-  description: Simple, Radix-prepared webapp with backend written in Python and FastAPI, and frontend written in React and EDS.
+  description: Simple, Radix-prepared webapp with backend written in Python and FastAPI, and frontend written in Vite, React and EDS.
   tags:
     - python
     - fastapi
