@@ -15,8 +15,9 @@ The template is maintained by the Varia team, but any contributions are welcome.
 
 ## Prerequisites
 
-* [uv](https://docs.astral.sh/uv/), the package manager used for the backend
-* [pnpm](https://pnpm.io/), the package manager used for the frontend
+* [uv](https://docs.astral.sh/uv/), the package manager used for the backend.
+* [pnpm](https://pnpm.io/), the package manager used for the frontend.
+* [Docker desktop](https://accessit.equinor.com/Search/Search?term=DOCKER+DESKTOP) - if you want to run in Docker.
 
 ## How to run locally
 
