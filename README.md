@@ -41,10 +41,11 @@ $ pnpm install
 $ pnpm build --outDir ../api/web
 ```
 
-Then start the backend
+Then install dependencies and start the backend
 
 ```shell
 $ cd api
+$ uv sync
 $ uv run main.py
 ```
 
