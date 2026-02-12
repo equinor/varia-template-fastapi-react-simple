@@ -1,12 +1,15 @@
 from contextlib import asynccontextmanager
+import os
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 import uvicorn
 
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    app.mount("/", StaticFiles(directory="/web", html=True), name="web")
-    app.mount("/assets", StaticFiles(directory="/web/assets"), name="assets")
+    static_folder = "/web" if os.path.isdir("/web") else "./web"
+    app.mount("/", StaticFiles(directory=static_folder, html=True), name="web")
+    app.mount("/assets", StaticFiles(directory=static_folder + "/assets"), name="assets")
     yield
 
 app = FastAPI(lifespan=lifespan)
