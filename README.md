@@ -9,6 +9,8 @@ Running the template creates a GitHub repository with the following content:
 * A Dockerfile for the app
 * A radixconfig.yaml file for setting this up in Radix.
 
+![Overview](Overview.svg)
+
 The actual setup in Radix is currently manual. Open [Radix](https://console.radix.equinor.com/applications), hit *Create new app* and follow the instructions.
 
 The template is maintained by the Varia team, but any contributions are welcome.
