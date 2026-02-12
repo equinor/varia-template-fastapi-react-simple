@@ -13,9 +13,44 @@ The actual setup in Radix is currently manual. Open [Radix](https://console.radi
 
 The template is maintained by the Varia team, but any contributions are welcome.
 
+## Prerequisites
+
+* [uv](https://docs.astral.sh/uv/), the package manager used for the backend
+* [pnpm](https://pnpm.io/), the package manager used for the frontend
+
 ## How to run locally
 
-```
+### Using Docker
+
+```shell
 $ docker build -t hello .
 $ docker run -p 8000:8000 hello
+```
+
+### From the command line
+
+#### Backend
+
+The backend is set up to also host the frontend. To enable this, you need to build the frontend first,
+and copy it to the backend for hosting:
+
+```shell
+$ cd web
+$ pnpm install
+$ pnpm build --outDir ../api/web
+```
+
+Then start the backend
+
+```shell
+$ cd api
+$ uv run main.py
+```
+
+#### Frontend
+
+```shell
+$ cd web
+$ pnpm install
+$ pnpm run dev
 ```
