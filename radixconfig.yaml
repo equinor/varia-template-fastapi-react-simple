@@ -1,7 +1,7 @@
 apiVersion: radix.equinor.com/v1
 kind: RadixApplication
 metadata:
-  name: varia-template-fastapi-react-simple
+  name: ${{parameters.appName}}
 spec:
   build:
     useBuildKit: true
