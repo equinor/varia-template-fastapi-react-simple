@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: varia-template-fastapi-react-simple
+  annotations:
+    github.com/project-slug: equinor/varia-template-fastapi-react-simple
+spec:
+  type: other
+  lifecycle: unknown
+  owner: Varia Reference Group
