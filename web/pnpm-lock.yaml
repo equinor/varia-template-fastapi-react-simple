@@ -12,8 +12,8 @@ importers:
         specifier: ^2.6.3
         version: 2.6.3(react-dom@19.2.0(react@19.2.0))(react@19.2.0)(styled-components@6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0))
       '@equinor/eds-icons':
-        specifier: ^0.22.0
-        version: 0.22.0
+        specifier: ^1.6.0
+        version: 1.6.0
       react:
         specifier: ^19.1.1
         version: 19.2.0
@@ -165,9 +165,6 @@ packages:
       react: ^18 || ^19
       react-dom: ^18 || ^19
       styled-components: ^6
-
-  '@equinor/eds-icons@0.22.0':
-    resolution: {integrity: sha512-4SmPT67rUbl6qFyOCiSsue68EERgEGaXl9Xx6DkScW46AMbM6OdX3New1hctx1MIb6YdNlkHc/WwXTc+MG9j9Q==}
 
   '@equinor/eds-icons@1.6.0':
     resolution: {integrity: sha512-kem0+yd7T/YQFLwC4tLxPq9LWLjQjODduGJLFQR1JXzm9e7oudozXgK7Fcmf7/ZXymEYBtAJyBkYR0d71GLPXw==}
@@ -1472,8 +1469,6 @@ snapshots:
       react-aria: 3.52.1(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
       react-dom: 19.2.0(react@19.2.0)
       styled-components: 6.1.19(react-dom@19.2.0(react@19.2.0))(react@19.2.0)
-
-  '@equinor/eds-icons@0.22.0': {}
 
   '@equinor/eds-icons@1.6.0': {}
 
