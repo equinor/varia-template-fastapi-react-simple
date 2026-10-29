@@ -1,0 +1,8 @@
+{
+    "name": "Varia FastAPI and React",
+    "image": "mcr.microsoft.com/devcontainers/python:1-3.13-bookworm",
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {}
+    },
+    "postCreateCommand": "pip install --user uv && corepack enable"
+}
