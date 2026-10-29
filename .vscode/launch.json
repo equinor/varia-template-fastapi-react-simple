@@ -15,12 +15,15 @@
         },
         {
             "name": "Frontend",
-            "type": "msedge",
+            "type": "node-terminal",
             "request": "launch",
-            "url": "http://localhost:5173",
-            "webRoot": "${workspaceFolder}/web",
-            "preLaunchTask": "web: dev",
-            "postDebugTask": "web: stop dev",
+            "command": "pnpm install && pnpm run dev",
+            "cwd": "${workspaceFolder}/web",
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "localhost:([0-9]+)",
+                "uriFormat": "http://localhost:%s"
+            },
             "presentation": { "hidden": true }
         },
         {

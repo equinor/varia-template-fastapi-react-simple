@@ -4,5 +4,8 @@
     "features": {
         "ghcr.io/devcontainers/features/node:1": {}
     },
+    "containerEnv": {
+        "UV_LINK_MODE": "copy"
+    },
     "postCreateCommand": "pip install --user uv && corepack enable"
 }
