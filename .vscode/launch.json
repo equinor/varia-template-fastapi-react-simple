@@ -1,0 +1,47 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Backend",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "uvicorn",
+            "args": ["main:app", "--host", "127.0.0.1", "--port", "8000", "--reload"],
+            "cwd": "${workspaceFolder}/api",
+            "python": "${workspaceFolder}/api/.venv/bin/python",
+            "preLaunchTask": "api: uv sync",
+            "justMyCode": true,
+            "presentation": { "hidden": true }
+        },
+        {
+            "name": "Frontend",
+            "type": "msedge",
+            "request": "launch",
+            "url": "http://localhost:5173",
+            "webRoot": "${workspaceFolder}/web",
+            "preLaunchTask": "web: dev",
+            "postDebugTask": "web: stop dev",
+            "presentation": { "hidden": true }
+        },
+        {
+            "name": "Run in Docker",
+            "type": "node-terminal",
+            "request": "launch",
+            "command": "docker run --rm -p 8000:8000 hello",
+            "cwd": "${workspaceFolder}",
+            "preLaunchTask": "docker: build",
+            "serverReadyAction": {
+                "action": "openExternally",
+                "pattern": "Uvicorn running on http://0\\.0\\.0\\.0:([0-9]+)",
+                "uriFormat": "http://localhost:%s"
+            }
+        }
+    ],
+    "compounds": [
+        {
+            "name": "Run",
+            "configurations": ["Backend", "Frontend"],
+            "stopAll": true
+        }
+    ]
+}
