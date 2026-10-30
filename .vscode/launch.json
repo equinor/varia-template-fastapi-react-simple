@@ -1,6 +1,7 @@
 {
     "version": "0.2.0",
     "configurations": [
+        // Not meant to run on its own; use "Run", which runs the "run: prepare" task first.
         {
             "name": "Backend",
             "type": "debugpy",
@@ -12,15 +13,15 @@
             "windows": {
                 "python": "${workspaceFolder}/api/.venv/Scripts/python.exe"
             },
-            "preLaunchTask": "api: uv sync",
             "justMyCode": true,
             "presentation": { "hidden": true }
         },
+        // Not meant to run on its own; use "Run", which runs the "run: prepare" task first.
         {
             "name": "Frontend",
             "type": "node-terminal",
             "request": "launch",
-            "command": "pnpm install && pnpm run dev",
+            "command": "pnpm run dev",
             "cwd": "${workspaceFolder}/web",
             "serverReadyAction": {
                 "action": "openExternally",
@@ -47,6 +48,7 @@
         {
             "name": "Run",
             "configurations": ["Backend", "Frontend"],
+            "preLaunchTask": "run: prepare",
             "stopAll": true
         }
     ]
