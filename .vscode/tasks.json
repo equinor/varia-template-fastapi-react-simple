@@ -1,0 +1,39 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "api: uv sync",
+            "type": "shell",
+            "command": "uv sync",
+            "options": { "cwd": "${workspaceFolder}/api" },
+            "problemMatcher": []
+        },
+        {
+            "label": "web: pnpm install",
+            "type": "shell",
+            "command": "pnpm install",
+            "options": { "cwd": "${workspaceFolder}/web" },
+            "problemMatcher": []
+        },
+        {
+            "label": "web: build to api/web",
+            "type": "shell",
+            "command": "pnpm build --outDir ../api/web --emptyOutDir",
+            "options": { "cwd": "${workspaceFolder}/web" },
+            "problemMatcher": []
+        },
+        {
+            "label": "run: prepare",
+            "dependsOrder": "sequence",
+            "dependsOn": ["api: uv sync", "web: pnpm install", "web: build to api/web"],
+            "problemMatcher": []
+        },
+        {
+            "label": "docker: build",
+            "type": "shell",
+            "command": "docker build -t hello .",
+            "options": { "cwd": "${workspaceFolder}" },
+            "problemMatcher": []
+        }
+    ]
+}

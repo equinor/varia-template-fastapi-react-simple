@@ -1,0 +1,14 @@
+{
+    "name": "Varia FastAPI and React",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/node:1": {},
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "containerEnv": {
+        "UV_LINK_MODE": "copy"
+    },
+    "postCreateCommand": "pip install --user uv && corepack enable"
+}
