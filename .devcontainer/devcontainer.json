@@ -14,6 +14,13 @@
     "customizations": {
         "codespaces": {
             "openFiles": ["CODESPACE.md"]
+        },
+        "vscode": {
+            "settings": {
+                "workbench.editorAssociations": {
+                    "**/CODESPACE.md": "vscode.markdown.preview.editor"
+                }
+            }
         }
     }
 }
