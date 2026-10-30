@@ -10,5 +10,17 @@
     "containerEnv": {
         "UV_LINK_MODE": "copy"
     },
-    "postCreateCommand": "pip install --user uv && corepack enable"
+    "postCreateCommand": "pip install --user uv && corepack enable",
+    "customizations": {
+        "codespaces": {
+            "openFiles": ["CODESPACE.md"]
+        },
+        "vscode": {
+            "settings": {
+                "workbench.editorAssociations": {
+                    "**/CODESPACE.md": "vscode.markdown.preview.editor"
+                }
+            }
+        }
+    }
 }
