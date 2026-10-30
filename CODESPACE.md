@@ -1,3 +1,5 @@
+> **Tip:** Press `Ctrl+Shift+V` (`Cmd+Shift+V` on Mac) to view this page formatted.
+
 # Welcome to your codespace
 
 This codespace is a complete development environment running in the cloud. Python, [uv](https://docs.astral.sh/uv/), Node.js, [pnpm](https://pnpm.io/) and Docker are already installed, so you can start coding right away.
