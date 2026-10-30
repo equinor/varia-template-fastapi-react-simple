@@ -9,6 +9,9 @@
             "args": ["main:app", "--host", "127.0.0.1", "--port", "8000", "--reload"],
             "cwd": "${workspaceFolder}/api",
             "python": "${workspaceFolder}/api/.venv/bin/python",
+            "windows": {
+                "python": "${workspaceFolder}/api/.venv/Scripts/python.exe"
+            },
             "preLaunchTask": "api: uv sync",
             "justMyCode": true,
             "presentation": { "hidden": true }
