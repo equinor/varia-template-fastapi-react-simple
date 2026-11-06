@@ -29,19 +29,6 @@
                 "uriFormat": "http://localhost:%s"
             },
             "presentation": { "hidden": true }
-        },
-        {
-            "name": "Run in Docker",
-            "type": "node-terminal",
-            "request": "launch",
-            "command": "docker run --rm -p 8000:8000 hello",
-            "cwd": "${workspaceFolder}",
-            "preLaunchTask": "docker: build",
-            "serverReadyAction": {
-                "action": "openExternally",
-                "pattern": "Uvicorn running on http://0\\.0\\.0\\.0:([0-9]+)",
-                "uriFormat": "http://localhost:%s"
-            }
         }
     ],
     "compounds": [
@@ -49,6 +36,7 @@
             "name": "Run",
             "configurations": ["Backend", "Frontend"],
             "preLaunchTask": "run: prepare",
+            "isDefault": true,
             "stopAll": true
         }
     ]

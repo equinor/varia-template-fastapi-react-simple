@@ -1,9 +1,10 @@
-## About this repository
+# About this repository
 
 This repository contains an application template for use with the [Varia developer portal](https://varia.equinor.com).
 To use it, open [Varia](https://varia.equinor.com), hit the Create... menu and look for the template there.
 
 Running the template creates a GitHub repository with the following content:
+
 * A tiny frontend based on Typescript, Vite, React and EDS
 * A tiny backend based on Python and FastAPI. The backend also hosts the frontend (single container)
 * A Dockerfile for the app
@@ -21,11 +22,13 @@ The template is maintained by the Varia team, but any contributions are welcome.
 
 ## How to run locally
 
+In VS Code, open **Run and Debug** and select **Run**, or press F5. This builds the application, starts the backend and frontend, and opens the app in your browser.
+
 ### Using Docker
 
 ```shell
-$ docker build -t hello .
-$ docker run -p 8000:8000 hello
+docker build -t hello .
+docker run -p 8000:8000 hello
 ```
 
 ### From the command line
@@ -36,23 +39,23 @@ The backend is set up to also host the frontend. To enable this, you need to bui
 and copy it to the backend for hosting:
 
 ```shell
-$ cd web
-$ pnpm install
-$ pnpm build --outDir ../api/web
+cd web
+pnpm install
+pnpm build --outDir ../api/web
 ```
 
 Then install dependencies and start the backend
 
 ```shell
-$ cd api
-$ uv sync
-$ uv run main.py
+cd api
+uv sync
+uv run main.py
 ```
 
 #### Frontend
 
 ```shell
-$ cd web
-$ pnpm install
-$ pnpm run dev
+cd web
+pnpm install
+pnpm run dev
 ```
